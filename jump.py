@@ -20,8 +20,11 @@ class jump:
         
     def start(self):
         
-        self.sense.clear()
-        self.gameloop()
+        while True:
+            
+            self.__init__()
+            self.sense.clear()
+            self.gameloop()
 
     def gameloop(self):
         
@@ -61,7 +64,7 @@ class jump:
         for a, b in self.stone.items():
             
             if b["x"] == self.player["x"] and b["y"] == self.player["y"]:
-                self.sense.show_message("GAME OVER")
+                sleep(1)
                 return 1
     
     def control(self):

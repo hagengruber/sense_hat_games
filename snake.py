@@ -30,10 +30,11 @@ class snake:
     
     def start(self):
         
-        self.sense.clear()
-        self.sense.show_message('START')
-        
-        self.gameloop()
+        while True:
+            
+            self.__init__()
+            self.sense.clear()            
+            self.gameloop()
 
     def gameloop(self):
         
@@ -86,7 +87,7 @@ class snake:
         if len(self.tail) != 0:
             for x, y in self.tail.items():
                 if y["posX"] == self.snake["posX"] and y["posY"] == self.snake["posY"]:
-                    self.sense.show_message("GAME OVER:(")
+                    sleep(1)
                     return 1
         
         if self.snake["posX"] == self.applePosX and self.snake["posY"] == self.applePosY:

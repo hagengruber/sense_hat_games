@@ -2,7 +2,7 @@ from sense_hat import SenseHat
 from time import sleep
 import random
 
-class pong:
+class not_pong:
     
     def __init__(self):
         
@@ -30,12 +30,15 @@ class pong:
         self.player_top = (0, 104, 0)
         self.player_bottom = (0, 104, 0)
         
-        self.speed = 0.3
+        self.speed = 0.2
     
     def start(self):
         
-        self.sense.clear()
-        self.gameloop()
+        while True:
+        
+            self.__init__()
+            self.sense.clear()
+            self.gameloop()
     
     def gameloop(self):
         

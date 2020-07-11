@@ -2,7 +2,7 @@ from sense_hat import SenseHat
 from time import sleep
 import random
 
-class test:
+class comet:
     
     def __init__(self):
         
@@ -19,10 +19,12 @@ class test:
         
     def start(self):
         
-        self.sense.clear()
+        while True:
+
+            self.__init__()
+            self.sense.clear()
+            self.gameloop()
         
-        self.gameloop()
-    
     def gameloop(self):
         
         x, y, z = self.sense.get_accelerometer_raw().values()
@@ -30,7 +32,7 @@ class test:
         
         while True:
             
-            sleep(0.1)
+            sleep(0.11)
             self.create_comet()
             self.set_player_position()
             self.set_comet_position()
